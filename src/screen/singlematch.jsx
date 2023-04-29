@@ -7,14 +7,14 @@ import axios from "axios";
 const Singlem = (key) => {
     const param = useParams();
     const id = param.id;
-    const [match,setMatch] = useState(null);
-    const fetchMatch = async ()=>{
+    const [match, setMatch] = useState(null);
+    const fetchMatch = async () => {
         const params = {
             Eid: '702093',
             Category: 'soccer',
         }
         const nurs = await axios({
-            url: 'https://livescore6.p.rapidapi.com/matches/v2/get-info',
+            url: 'https://livescore6.p.rapidapi.com/matches/v2/get-lineups',
             method: 'get',
             params: params,
             headers: {
@@ -60,7 +60,20 @@ const Singlem = (key) => {
                                         Content of Tab Pane 2
                                     </Tabs.TabPane>
                                     <Tabs.TabPane tab="Составы" key="3">
-                                        Content of Tab Pane 4
+                                        {matches != null ?
+                                            <>
+                                                {matches.map((item) =>
+                            <div className="row">
+                                <div className="col-12">
+                                    <div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+)
+                                                }</>
+                                            : <></>
+                                        }
                                     </Tabs.TabPane>
                                     <Tabs.TabPane tab="Рейтинг игроков" key="4">
                                         Content of Tab Pane 5
