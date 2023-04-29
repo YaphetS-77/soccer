@@ -60,17 +60,22 @@ const Singlem = (key) => {
                                         Content of Tab Pane 2
                                     </Tabs.TabPane>
                                     <Tabs.TabPane tab="Составы" key="3">
-                                        {matches != null ?
+                                        {match != null ?
                                             <>
-                                                {matches.map((item) =>
-                            <div className="row">
-                                <div className="col-12">
-                                    <div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-)
+                                                {match.map((item) =>
+                                                    <div className="row">
+                                                        <div className="col-md-12">
+                                                            <div className="row">
+                                                                <div className="col-md-6">
+
+                                                                </div>
+                                                                <div className="col-md-6">
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                )
                                                 }</>
                                             : <></>
                                         }
